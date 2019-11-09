@@ -9,14 +9,22 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+//initial vue router
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));,
+
+let routes = [
+    { path: '/dashbord', component: require('./components/Dashboard') },
+    { path: '/profile', component: require('./components/Profile') }
+]
+
+const router = new VueRouter({
+    routes // short for `routes: routes`
+})
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
