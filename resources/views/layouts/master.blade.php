@@ -80,15 +80,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
                         <router-link to="/dashbord" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-tachometer-alt green"></i>
                             <p>
                                 Dashboard
                             </p>
                         </router-link>
                     </li>
                     <li class="nav-item has-treeview ">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-server"></i>
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-server blue"></i>
                             <p>
                                 start page
                                 <i class="right fas fa-angle-left"></i>
@@ -106,19 +106,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item">
                         <router-link to="/profile" class="nav-link">
-                            <i class="nav-icon fas fa-user-astronaut"></i>
+                            <i class="nav-icon fas fa-user-astronaut teal"></i>
                             <p>
                                 Profile
                             </p>
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-power-off"></i>
+                        <a class="nav-link" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                            <i class="nav-icon fa fa-power-off red"></i>
                             <p>
-                                logout
+                                {{ __('Logout') }}
                             </p>
                         </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </nav>
