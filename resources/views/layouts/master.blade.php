@@ -90,16 +90,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="nav-link ">
                             <i class="nav-icon fas fa-server blue"></i>
                             <p>
-                                start page
+                                Managment
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Inactive Page</p>
-                                </a>
+                                <router-link to="/user" class="nav-link">
+                                    <i class="nav-icon fas fa-users teal"></i>
+                                    <p>
+                                        Users
+                                    </p>
+                                </router-link>
                             </li>
                         </ul>
                     </li>
